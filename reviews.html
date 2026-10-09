@@ -2,15 +2,20 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>SteamHub — Экспертные обзоры релизов</title>
+  <title>SteamHub — Рецензии и обзоры релизов</title>
   <link rel="stylesheet" href="style.css">
+  
+  <script type="text/javascript">
+    var _tmr = window._tmr || (window._tmr = []);
+    _tmr.push({id: "3400123", type: "pageView", start: (new Date()).getTime()});
+  </script>
 </head>
 <body>
   <header>
     <a href="index.html" class="logo">Steam<span>Hub</span></a>
     <nav>
       <a href="index.html">Главная</a>
-      <a href="deals.html">Распродажи</a>
+      <a href="deals.html">Скидки и акции</a>
       <a href="reviews.html" class="active">Обзоры</a>
       <a href="deck.html">Steam Deck</a>
       <a href="feedback.html">Подписка</a>
@@ -18,17 +23,44 @@
   </header>
 
   <main>
-    <h1>Обзоры игр от редакции</h1>
-    <div class="card" style="margin-bottom: 20px;">
-      <h3>Baldur's Gate 3: Почему эта RPG на века</h3>
-      <p>Оценка сообщества Steam: <strong>Крайне положительные (96%)</strong></p>
-      <p>Детальный разбор тактических механик, реиграбельности и производительности на последних патчах.</p>
-    </div>
-    <div class="card">
-      <h3>Elden Ring: Shadow of the Erdtree</h3>
-      <p>Оценка сообщества Steam: <strong>Очень положительные (88%)</strong></p>
-      <p>Руководство по боссам, прокачке оружия и поиску скрытых зон в Темнолесье.</p>
+    <h1>Обзоры актуальных релизов</h1>
+    <p class="lead-text">Честные оценки, аналитика оптимизации и отзывы сообщества игроков.</p>
+
+    <div class="grid">
+      <div class="card">
+        <img class="card-img" src="https://cdn.cloudflare.steamstatic.com/steam/apps/1086940/header.jpg" alt="Baldur's Gate 3">
+        <div class="card-body">
+          <span class="badge badge-hot">Выбор редакции: 10/10</span>
+          <h3 class="card-title">Baldur's Gate 3: Новая планка для жанра RPG</h3>
+          <p>Колоссальная вариативность сюжета, живые спутники и кинематографичная подача каждого диалога. Игра года, подтвердившая величие пошаговых партийных систем.</p>
+          <p style="color: var(--accent-green); font-weight:600; margin-top:10px;">96% положительных отзывов в Steam</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="card-img" src="https://cdn.cloudflare.steamstatic.com/steam/apps/860510/header.jpg" alt="Little Nightmares II">
+        <div class="card-body">
+          <span class="badge badge-deck-verified">Оценка: 9/10</span>
+          <h3 class="card-title">Little Nightmares II: Шедевр саспенса</h3>
+          <p>Мрачное и визуально безупречное приключение Моно и Шестой в Искаженном мире. Великолепный дизайн звука и пространственные головоломки.</p>
+          <p style="color: var(--accent-green); font-weight:600; margin-top:10px;">94% положительных отзывов в Steam</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="card-img" src="https://cdn.cloudflare.steamstatic.com/steam/apps/1172470/header.jpg" alt="Apex Legends">
+        <div class="card-body">
+          <span class="badge badge-deck-playable">Оценка: 8/10</span>
+          <h3 class="card-title">Apex Legends: Состояние соревновательного онлайна</h3>
+          <p>Анализ сетевого кода, меты легенд 20-х сезонов и балансировки контроллерного аим-ассиста на ПК-серверах.</p>
+          <p style="color: var(--text-muted); font-weight:600; margin-top:10px;">Смешанные отзывы (из-за античита)</p>
+        </div>
+      </div>
     </div>
   </main>
+
+  <footer>
+    <p class="footer-text">© 2026 Портал SteamHub. Обзоры подготовлены редакцией портала.</p>
+  </footer>
 </body>
 </html>
