@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>SteamHub — Подписка на уведомления</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">Steam<span>Hub</span></a>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="deals.html">Распродажи</a>
+      <a href="reviews.html">Обзоры</a>
+      <a href="deck.html">Steam Deck</a>
+      <a href="feedback.html" class="active">Подписка</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Подписка на оповещения о скидках</h1>
+    <p>Получайте уведомления в момент старта распродаж игр из вашего вишлиста.</p>
+
+    <form id="subscribeForm" onsubmit="handleFormSubmit(event)">
+      <div class="form-group">
+        <label for="userName">Ваше имя / Steam Никнейм:</label>
+        <input type="text" id="userName" required placeholder="GabeNewell">
+      </div>
+      <div class="form-group">
+        <label for="userEmail">Электронная почта:</label>
+        <input type="email" id="userEmail" required placeholder="steamuser@example.com">
+      </div>
+      <div class="form-group">
+        <label for="favGenre">Любимый жанр:</label>
+        <select id="favGenre">
+          <option value="rpg">RPG / Ролевые игры</option>
+          <option value="action">Action / Экшены</option>
+          <option value="strategy">Стратегии</option>
+          <option value="indie">Инди-проекты</option>
+        </select>
+      </div>
+      <button type="submit" class="btn" id="btnSubmitFeedback">Подписаться на рассылку</button>
+    </form>
+    <div id="successMsg" style="display:none; color: var(--accent-green); margin-top:20px; font-weight:bold;">
+      Спасибо! Вы успешно подписаны. (Цель зафиксирована трекерами)
+    </div>
+  </main>
+
+  <script>
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      document.getElementById('subscribeForm').style.display = 'none';
+      document.getElementById('successMsg').style.display = 'block';
+
+      // 1. Фиксация цели для MyTracker (Лаб. 5)
+      if (window._tmr) {
+        _tmr.push({ id: '3400123', type: 'reachGoal', goal: 'submit_lead_form' });
+      }
+
+      // 2. Фиксация цели для Рамблер/топ-100 (Лаб. 4)
+      if (window.top100Counter) {
+        window.top100Counter.trackEvent('lead_complete', { form: 'steam_subscribe' });
+      }
+    }
+  </script>
+</body>
+</html>

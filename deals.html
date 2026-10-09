@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>SteamHub — Актуальные скидки и распродажи Steam</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <a href="index.html" class="logo">Steam<span>Hub</span></a>
+    <nav>
+      <a href="index.html">Главная</a>
+      <a href="deals.html" class="active">Распродажи</a>
+      <a href="reviews.html">Обзоры</a>
+      <a href="deck.html">Steam Deck</a>
+      <a href="feedback.html">Подписка</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Горячие предложения Steam</h1>
+    <p>Исторические минимумы цен и скидки до 90%.</p>
+
+    <div class="grid">
+      <div class="card">
+        <h3>Cyberpunk 2077</h3>
+        <p class="price">-50% | 1 499 ₽</p>
+        <button class="btn" onclick="trackDealClick('Cyberpunk 2077')">В корзину Steam</button>
+      </div>
+      <div class="card">
+        <h3>Hades II</h3>
+        <p class="price">-20% | 880 ₽</p>
+        <button class="btn" onclick="trackDealClick('Hades II')">В корзину Steam</button>
+      </div>
+      <div class="card">
+        <h3>Hollow Knight: Silksong</h3>
+        <p class="price">Спецпредложение</p>
+        <button class="btn" onclick="trackDealClick('Silksong')">В список желаемого</button>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    function trackDealClick(gameName) {
+      alert("Переход к покупке игры: " + gameName);
+      // Фиксация события для MyTracker и Рамблер Топ-100
+      if (window._tmr) { _tmr.push({ type: 'reachGoal', goal: 'deal_click', value: gameName }); }
+      if (window.top100Counter) { window.top100Counter.trackEvent('deal_click', { game: gameName }); }
+    }
+  </script>
+</body>
+</html>
