@@ -2,10 +2,10 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>SteamHub — Главный портал фанатов экосистемы Steam</title>
+  <title>SteamHub — Главный агрегатор распродаж, онлайна и новостей Steam</title>
   <link rel="stylesheet" href="style.css">
   
-  <!-- КОД СЧЕТЧИКА MYTRACKER (ЛАБ. 5) -->
+  <!-- СЧЕТЧИК MYTRACKER / РЕЙТИНГ MAIL.RU -->
   <script type="text/javascript">
     var _tmr = window._tmr || (window._tmr = []);
     _tmr.push({id: "3400123", type: "pageView", start: (new Date()).getTime()});
@@ -17,8 +17,8 @@
       if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); }
     })(document, window, "tmr-code");
   </script>
-  
-  <!-- КОД СЧЕТЧИКА РАМБЛЕР/ТОП-100 (ЛАБ. 4) -->
+
+  <!-- СЧЕТЧИК РАМБЛЕР/ТОП-100 -->
   <script type="text/javascript">
     (function (w, d, c) {
       (w[c] = w[c] || []).push(function() {
@@ -40,7 +40,7 @@
     <a href="index.html" class="logo">Steam<span>Hub</span></a>
     <nav>
       <a href="index.html" class="active">Главная</a>
-      <a href="deals.html">Распродажи</a>
+      <a href="deals.html">Скидки и акции</a>
       <a href="reviews.html">Обзоры</a>
       <a href="deck.html">Steam Deck</a>
       <a href="feedback.html">Подписка</a>
@@ -48,41 +48,69 @@
   </header>
 
   <main>
-    <h1>Добро пожаловать на SteamHub</h1>
-    <p>Агрегатор скидок, аналитика онлайна и руководства по портативной консоли Steam Deck.</p>
-    
+    <div class="hero-banner">
+      <span class="badge badge-hot">Сезонное событие</span>
+      <h2>Большая весенняя распродажа Steam уже началась!</h2>
+      <p>Тысячи игр со скидками до 90%, эксклюзивные карточки распродажи, внутриигровые награды за просмотр трансляций и обновления совместимости для портативных ПК.</p>
+      <a href="deals.html" class="btn" onclick="trackPromoClick()">Изучить витрину акций</a>
+    </div>
+
+    <h1>Популярные разделы портала</h1>
+    <p class="lead-text">Быстрый доступ к базе данных цен, независимым рецензиям и тестам портативного железа Valve.</p>
+
     <div class="grid">
       <div class="card">
-        <h3>Текущие сезонные скидки</h3>
-        <p>Изучите лучшие предложения весеннего и фестивального ивентов в магазине Valve.</p>
-        <a href="deals.html" class="btn" id="btn-deals-view">Перейти к скидкам</a>
+        <img class="card-img" src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&w=600&q=80" alt="Скидки игр">
+        <div class="card-body">
+          <h3 class="card-title">Витрина суперскидок</h3>
+          <p>Автоматический мониторинг исторических минимумов цен, скидочные купоны и аналитика внутриигрового рынка скинов.</p>
+          <a href="deals.html" class="btn btn-secondary">Каталог скидок</a>
+        </div>
       </div>
+
       <div class="card">
-        <h3>Сообщество и рейтинги</h3>
-        <p>Оценки игроков, синхронизация отзывов и списки желаемого.</p>
-        <a href="reviews.html" class="btn btn-secondary">Читать обзоры</a>
+        <img class="card-img" src="https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=600&q=80" alt="Обзоры">
+        <div class="card-body">
+          <h3 class="card-title">Редакторские рецензии</h3>
+          <p>Мнения опытных игроков, детальный анализ производительности на ПК и проверка статуса античитов в мультиплеере.</p>
+          <a href="reviews.html" class="btn btn-secondary">Читать статьи</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <img class="card-img" src="https://images.unsplash.com/photo-1612287271162-26a97825a072?auto=format&fit=crop&w=600&q=80" alt="Steam Deck">
+        <div class="card-body">
+          <h3 class="card-title">Совместимость Deck Verified</h3>
+          <p>База тестов библиотеки Steam на портативных консолях Steam Deck LCD и OLED. Пресеты графики под 40 и 60 FPS.</p>
+          <a href="deck.html" class="btn btn-secondary">База тестов Deck</a>
+        </div>
       </div>
     </div>
   </main>
 
   <footer>
-    <p>© 2026 SteamHub Portal. Анализ посещаемости для Московского Политеха.</p>
+    <p class="footer-text">© 2026 Портал SteamHub. Все товарные знаки Valve и Steam принадлежат корпорации Valve.</p>
     <div class="counters-block">
-      <!-- ИНФОРМЕР LIVEINTERNET (ЛАБ. 3) -->
+      <!-- ИНФОРМЕР LIVEINTERNET -->
       <a href="https://www.liveinternet.ru/click" target="_blank">
         <img src="https://counter.yadro.ru/logo?29.1" title="LiveInternet" alt="LiveInternet" border="0" width="88" height="31"/>
       </a>
-      
-      <!-- ВИДЖЕТ РАМБЛЕР/ТОП-100 (ЛАБ. 4) -->
+      <!-- ВИДЖЕТ РАМБЛЕР/ТОП-100 -->
       <a href="https://top100.rambler.ru/home?id=7890123" target="_blank">
         <img src="https://kraken.rambler.ru/cnt/?project=7890123" alt="Rambler's Top100" border="0" />
       </a>
-      
-      <!-- ЛОГОТИП РЕЙТИНГ MAIL.RU / MYTRACKER (ЛАБ. 5) -->
+      <!-- ЛОГОТИП РЕЙТИНГ MAIL.RU -->
       <a href="https://top.mail.ru/jump?from=3400123">
         <img src="https://top-fwz1.mail.ru/counter?id=3400123;t=479;l=1" height="31" width="88" alt="Рейтинг Mail.ru" border="0">
       </a>
     </div>
   </footer>
+
+  <script>
+    function trackPromoClick() {
+      if (window._tmr) { _tmr.push({ type: 'reachGoal', goal: 'click_promo_banner' }); }
+      if (window.top100Counter) { window.top100Counter.trackEvent('click_promo_banner'); }
+    }
+  </script>
 </body>
 </html>
