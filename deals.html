@@ -2,15 +2,20 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>SteamHub — Актуальные скидки и распродажи Steam</title>
+  <title>SteamHub — Актуальные скидки и исторические минимумы цен</title>
   <link rel="stylesheet" href="style.css">
+  
+  <script type="text/javascript">
+    var _tmr = window._tmr || (window._tmr = []);
+    _tmr.push({id: "3400123", type: "pageView", start: (new Date()).getTime()});
+  </script>
 </head>
 <body>
   <header>
     <a href="index.html" class="logo">Steam<span>Hub</span></a>
     <nav>
       <a href="index.html">Главная</a>
-      <a href="deals.html" class="active">Распродажи</a>
+      <a href="deals.html" class="active">Скидки и акции</a>
       <a href="reviews.html">Обзоры</a>
       <a href="deck.html">Steam Deck</a>
       <a href="feedback.html">Подписка</a>
@@ -18,34 +23,83 @@
   </header>
 
   <main>
-    <h1>Горячие предложения Steam</h1>
-    <p>Исторические минимумы цен и скидки до 90%.</p>
+    <h1>Спецпредложения недели в Steam</h1>
+    <p class="lead-text">Цены актуальны до четверга 19:00 МСК. Нажмите кнопку покупки для перехода к оформлению заказа.</p>
 
     <div class="grid">
+      <!-- Игра 1 -->
       <div class="card">
-        <h3>Cyberpunk 2077</h3>
-        <p class="price">-50% | 1 499 ₽</p>
-        <button class="btn" onclick="trackDealClick('Cyberpunk 2077')">В корзину Steam</button>
+        <img class="card-img" src="https://cdn.cloudflare.steamstatic.com/steam/apps/1091500/header.jpg" alt="Cyberpunk 2077">
+        <div class="card-body">
+          <span class="badge badge-hot">-50% Скидка</span>
+          <h3 class="card-title">Cyberpunk 2077: Ultimate Edition</h3>
+          <p>Приключенческая ролевая игра в открытом мире Найт-Сити с дополнением «Призрачная свобода».</p>
+          <div class="price-box">
+            <span class="discount-tag">-50%</span>
+            <div>
+              <div class="old-price">3 199 ₽</div>
+              <div class="final-price">1 599 ₽</div>
+            </div>
+          </div>
+          <button class="btn" onclick="handleDealPurchase('Cyberpunk 2077')">В корзину Steam</button>
+        </div>
       </div>
+
+      <!-- Игра 2 -->
       <div class="card">
-        <h3>Hades II</h3>
-        <p class="price">-20% | 880 ₽</p>
-        <button class="btn" onclick="trackDealClick('Hades II')">В корзину Steam</button>
+        <img class="card-img" src="https://cdn.cloudflare.steamstatic.com/steam/apps/1145360/header.jpg" alt="Hades II">
+        <div class="card-body">
+          <span class="badge badge-deck-verified">Deck Verified</span>
+          <h3 class="card-title">Hades II</h3>
+          <p>Долгожданное продолжение отмеченного наградами рогалика. Сразитесь с титаном времени Кроносом.</p>
+          <div class="price-box">
+            <span class="discount-tag">-20%</span>
+            <div>
+              <div class="old-price">1 100 ₽</div>
+              <div class="final-price">880 ₽</div>
+            </div>
+          </div>
+          <button class="btn" onclick="handleDealPurchase('Hades II')">В корзину Steam</button>
+        </div>
       </div>
+
+      <!-- Игра 3 -->
       <div class="card">
-        <h3>Hollow Knight: Silksong</h3>
-        <p class="price">Спецпредложение</p>
-        <button class="btn" onclick="trackDealClick('Silksong')">В список желаемого</button>
+        <img class="card-img" src="https://cdn.cloudflare.steamstatic.com/steam/apps/1245620/header.jpg" alt="Elden Ring">
+        <div class="card-body">
+          <span class="badge badge-hot">Хит продаж</span>
+          <h3 class="card-title">Elden Ring</h3>
+          <p>Фэнтезийная экшен-RPG от FromSoftware и Джорджа Мартина. Исследуйте масштабные Междуземья.</p>
+          <div class="price-box">
+            <span class="discount-tag">-35%</span>
+            <div>
+              <div class="old-price">3 999 ₽</div>
+              <div class="final-price">2 599 ₽</div>
+            </div>
+          </div>
+          <button class="btn" onclick="handleDealPurchase('Elden Ring')">В корзину Steam</button>
+        </div>
       </div>
     </div>
   </main>
 
+  <footer>
+    <p class="footer-text">© 2026 Портал SteamHub. Все товарные знаки принадлежат Valve Corporation.</p>
+  </footer>
+
   <script>
-    function trackDealClick(gameName) {
-      alert("Переход к покупке игры: " + gameName);
-      // Фиксация события для MyTracker и Рамблер Топ-100
-      if (window._tmr) { _tmr.push({ type: 'reachGoal', goal: 'deal_click', value: gameName }); }
-      if (window.top100Counter) { window.top100Counter.trackEvent('deal_click', { game: gameName }); }
+    function handleDealPurchase(gameTitle) {
+      alert('Событие зафиксировано! Переход на страницу корзины: ' + gameTitle);
+      
+      // Фиксация конверсии для MyTracker (Лаб. 5)
+      if (window._tmr) {
+        _tmr.push({ id: '3400123', type: 'reachGoal', goal: 'deal_click', value: gameTitle });
+      }
+      
+      // Фиксация события для Рамблер/топ-100 (Лаб. 4)
+      if (window.top100Counter) {
+        window.top100Counter.trackEvent('deal_click', { game: gameTitle });
+      }
     }
   </script>
 </body>
