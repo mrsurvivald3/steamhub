@@ -2,15 +2,20 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>SteamHub — База совместимости Steam Deck</title>
+  <title>SteamHub — Руководства и оптимизация для Steam Deck</title>
   <link rel="stylesheet" href="style.css">
+  
+  <script type="text/javascript">
+    var _tmr = window._tmr || (window._tmr = []);
+    _tmr.push({id: "3400123", type: "pageView", start: (new Date()).getTime()});
+  </script>
 </head>
 <body>
   <header>
     <a href="index.html" class="logo">Steam<span>Hub</span></a>
     <nav>
       <a href="index.html">Главная</a>
-      <a href="deals.html">Распродажи</a>
+      <a href="deals.html">Скидки и акции</a>
       <a href="reviews.html">Обзоры</a>
       <a href="deck.html" class="active">Steam Deck</a>
       <a href="feedback.html">Подписка</a>
@@ -18,16 +23,43 @@
   </header>
 
   <main>
-    <h1>Оптимизация и совместимость для Steam Deck</h1>
-    <p>Категории статуса совместимости Valve Deck Verified:</p>
-    <ul>
-      <li>🟢 <strong>Verified (Проверено):</strong> Идеальная работа «из коробки» без настроек.</li>
-      <li>🟡 <strong>Playable (Можно играть):</strong> Требуется ручная настройка графики или экранная клавиатура.</li>
-      <li>🚫 <strong>Unsupported (Не поддерживается):</strong> Несовместимость античита или ОС Proton.</li>
-    </ul>
-    <div style="margin-top:20px;">
-      <a href="https://store.steampowered.com/steamdeck" target="_blank" class="btn">Официальный магазин Valve</a>
+    <div class="hero-banner" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.85)), url('https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&w=1200&q=80');">
+      <h2>Портативный гейминг на SteamOS</h2>
+      <p>Steam Deck объединяет мощность ПК и удобство консоли. Мы тестируем совместимость библиотеки игр через слои трансляции Proton и Proton-GE.</p>
+    </div>
+
+    <h1>Категории сертификации Valve Deck Verified</h1>
+    <p class="lead-text">Официальные критерии совместимости каталога Steam с портативными контроллерами и экраном устройства.</p>
+
+    <div class="grid">
+      <div class="card">
+        <div class="card-body">
+          <span class="badge badge-deck-verified">🟢 Verified (Полностью совместимо)</span>
+          <h3 class="card-title">Идеально «из коробки»</h3>
+          <p>Игра автоматически выставляет нативное разрешение (1280x800), отображает стандартные кнопки геймпада Steam и читабельный шрифт интерфейса без ручных настроек.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <span class="badge badge-deck-playable">🟡 Playable (Можно играть)</span>
+          <h3 class="card-title">Требуется вмешательство игрока</h3>
+          <p>Может потребоваться вызов экранной клавиатуры для ввода имени, ручная смена раскладки трекпадов или ручная настройка разрешения в меню графики.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-body">
+          <span class="badge badge-hot">🚫 Unsupported (Не поддерживается)</span>
+          <h3 class="card-title">Не запустится</h3>
+          <p>Игры с драйверными античитами уровня ядра (kernel-level anti-cheat), не поддерживающими Linux/Proton (например, Destiny 2, Valorant).</p>
+        </div>
+      </div>
     </div>
   </main>
+
+  <footer>
+    <p class="footer-text">© 2026 Портал SteamHub. Раздел технической поддержки сообщества.</p>
+  </footer>
 </body>
 </html>
