@@ -2,15 +2,20 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <title>SteamHub — Подписка на уведомления</title>
+  <title>SteamHub — Подписка на уведомления и обратная связь</title>
   <link rel="stylesheet" href="style.css">
+  
+  <script type="text/javascript">
+    var _tmr = window._tmr || (window._tmr = []);
+    _tmr.push({id: "3400123", type: "pageView", start: (new Date()).getTime()});
+  </script>
 </head>
 <body>
   <header>
     <a href="index.html" class="logo">Steam<span>Hub</span></a>
     <nav>
       <a href="index.html">Главная</a>
-      <a href="deals.html">Распродажи</a>
+      <a href="deals.html">Скидки и акции</a>
       <a href="reviews.html">Обзоры</a>
       <a href="deck.html">Steam Deck</a>
       <a href="feedback.html" class="active">Подписка</a>
@@ -18,48 +23,61 @@
   </header>
 
   <main>
-    <h1>Подписка на оповещения о скидках</h1>
-    <p>Получайте уведомления в момент старта распродаж игр из вашего вишлиста.</p>
+    <h1>Уведомления о старте распродаж</h1>
+    <p class="lead-text">Подпишитесь, чтобы получать уведомления на почту при падении цен на игры из списка желаемого.</p>
 
-    <form id="subscribeForm" onsubmit="handleFormSubmit(event)">
+    <form id="subscribeForm" onsubmit="submitLeadForm(event)">
       <div class="form-group">
-        <label for="userName">Ваше имя / Steam Никнейм:</label>
-        <input type="text" id="userName" required placeholder="GabeNewell">
+        <label for="userName">Ваш никнейм / Steam ID:</label>
+        <input type="text" id="userName" required placeholder="Например: GordonFreeman">
       </div>
+
       <div class="form-group">
         <label for="userEmail">Электронная почта:</label>
         <input type="email" id="userEmail" required placeholder="steamuser@example.com">
       </div>
+
       <div class="form-group">
-        <label for="favGenre">Любимый жанр:</label>
-        <select id="favGenre">
-          <option value="rpg">RPG / Ролевые игры</option>
-          <option value="action">Action / Экшены</option>
-          <option value="strategy">Стратегии</option>
-          <option value="indie">Инди-проекты</option>
+        <label for="platform">Ваша основная платформа:</label>
+        <select id="platform">
+          <option value="pc">Настольный ПК (Windows)</option>
+          <option value="deck">Steam Deck (SteamOS / Linux)</option>
+          <option value="laptop">Игровой ноутбук</option>
         </select>
       </div>
-      <button type="submit" class="btn" id="btnSubmitFeedback">Подписаться на рассылку</button>
+
+      <div class="form-group">
+        <label for="notes">Какие игры вы больше всего ждете на скидках?</label>
+        <textarea id="notes" rows="3" placeholder="GTA VI, Silksong, Monster Hunter Wilds..."></textarea>
+      </div>
+
+      <button type="submit" class="btn" style="width: 100%;">Подписаться на скидки</button>
     </form>
-    <div id="successMsg" style="display:none; color: var(--accent-green); margin-top:20px; font-weight:bold;">
-      Спасибо! Вы успешно подписаны. (Цель зафиксирована трекерами)
+
+    <div id="successMessage" style="display:none; margin-top:25px; padding:20px; background:var(--bg-secondary); border:1px solid var(--accent-green); border-radius:8px; max-width:650px;">
+      <h3 style="color:var(--accent-green); margin-bottom:8px;">Заявка успешно зарегистрирована!</h3>
+      <p>Целевое действие выполнено. Конверсия отправлена в системы MyTracker и Рамблер/топ-100.</p>
     </div>
   </main>
 
+  <footer>
+    <p class="footer-text">© 2026 Портал SteamHub. Конфиденциальность гарантируется.</p>
+  </footer>
+
   <script>
-    function handleFormSubmit(e) {
+    function submitLeadForm(e) {
       e.preventDefault();
       document.getElementById('subscribeForm').style.display = 'none';
-      document.getElementById('successMsg').style.display = 'block';
+      document.getElementById('successMessage').style.display = 'block';
 
-      // 1. Фиксация цели для MyTracker (Лаб. 5)
+      // 1. Фиксация цели в MyTracker / Рейтинг Mail.ru (Лаб. 5)
       if (window._tmr) {
         _tmr.push({ id: '3400123', type: 'reachGoal', goal: 'submit_lead_form' });
       }
 
-      // 2. Фиксация цели для Рамблер/топ-100 (Лаб. 4)
+      // 2. Фиксация события конверсии в Рамблер/топ-100 (Лаб. 4)
       if (window.top100Counter) {
-        window.top100Counter.trackEvent('lead_complete', { form: 'steam_subscribe' });
+        window.top100Counter.trackEvent('lead_complete', { source: 'subscription_page' });
       }
     }
   </script>
