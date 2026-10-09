@@ -95,9 +95,21 @@
     <p class="footer-text">© 2026 Портал SteamHub. Автор Гудков А.В. студент группы 233-322.</p>
     <div class="counters-block">
       <!-- ИНФОРМЕР LIVEINTERNET -->
-      <a href="https://www.liveinternet.ru/click" target="_blank">
-        <img src="https://counter.yadro.ru/logo?29.1" title="LiveInternet" alt="LiveInternet" border="0" width="88" height="31"/>
-      </a>
+<a href="https://www.liveinternet.ru/click;mrsurvivald3.github.io" target="_blank">
+  <img id="licnt" src="https://counter.yadro.ru/hit;mrsurvivald3.github.io?t14.6;r" 
+       alt="LiveInternet" width="88" height="31" style="border:0;" />
+</a>
+<script>
+  (function(){
+    var img = document.getElementById('licnt');
+    if (img) {
+      img.src = 'https://counter.yadro.ru/hit;mrsurvivald3.github.io?t14.6;r' + escape(document.referrer) +
+        ((typeof(screen)=='undefined')?'':';s'+screen.width+'*'+screen.height+'*'+(screen.colorDepth?screen.colorDepth:screen.pixelDepth)) +
+        ';u'+escape(document.URL) + ';' + Math.random();
+    }
+  })();
+</script>
+<!-- /LiveInternet counter -->
       <!-- ВИДЖЕТ РАМБЛЕР/ТОП-100 -->
       <a href="https://top100.rambler.ru/home?id=7890123" target="_blank">
         <img src="https://kraken.rambler.ru/cnt/?project=7890123" alt="Rambler's Top100" border="0" />
